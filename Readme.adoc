@@ -1,0 +1,11 @@
+= Spring Boot Security REST через JWT и оформлением с помощью Vue
+
+Демонстрация защишенного REST сервиса и доступом к нему через https://ru.wikipedia.org/wiki/Одностраничное_приложение[Одностраничное_приложение] на
+https://vuejs.org[Vue].
+
+
+._Источники_
+https://bezkoder.com/spring-boot-jwt-authentication/[Источник для проекта
+для Spring Security REST] +
+    https://bezkoder.com/spring-boot-vue-js-authentication-jwt-spring-security/[Проект Vue]
+

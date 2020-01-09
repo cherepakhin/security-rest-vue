@@ -36,10 +36,11 @@ import ru.perm.v.securityrest2.security.service.UserDetailsImpl;
 @RequestMapping("/api/auth")
 public class AuthController {
 
+	private final static String ERROR_ROLE_NOT_FOUND = "Error: Role is not "
+			+ "found.";
 	private static final Logger logger = LoggerFactory
 			.getLogger(AuthController.class);
-	private final static String ERROR_ROLE_NOT_FOUND="Error: Role is not "
-			+ "found.";
+
 	@Autowired
 	AuthenticationManager authenticationManager;
 

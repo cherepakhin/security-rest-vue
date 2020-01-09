@@ -56,7 +56,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.cors()
+		String[] resources = new String[]{
+				"/h2/**"
+		};
+
+		http
+				.cors()
 				.and()
 				.csrf().disable()
 				.exceptionHandling()
@@ -65,9 +70,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 				.and()
-				.authorizeRequests().antMatchers("/api/auth/**").permitAll()
+				.authorizeRequests()
+				.antMatchers(resources).permitAll()
+				.antMatchers("/api/auth/**").permitAll()
 				.antMatchers("/api/test/**").permitAll()
-				.antMatchers("/h2/**").permitAll()
 				.anyRequest()
 				.authenticated();
 
